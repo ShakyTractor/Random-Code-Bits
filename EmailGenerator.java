@@ -1,3 +1,5 @@
+import java.util.*;
+
 public class EmailGenerator {
 	private String firstName;
 	private String lastName;
@@ -18,8 +20,17 @@ public class EmailGenerator {
 	}
 
 	public static void main(String[] args) {
-		//random example on how it should be used
-		EmailGenerator e = new EmailGenerator("Robert", "Rogers", "sales", "tesla");
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Enter your first name: ");
+		String firstName = sc.nextLine().toLowerCase();
+		System.out.print("Enter your last name: ");
+		String lastName = sc.nextLine().toLowerCase();
+		System.out.print("Enter your department: ");
+		String department = sc.nextLine().toLowerCase();
+		System.out.print("Enter your company name: ");
+		String company = sc.nextLine().toLowerCase();
+
+		EmailGenerator e = new EmailGenerator(firstName, lastName, department, company);
 		System.out.println(e.createEmail());
 	}
 }
